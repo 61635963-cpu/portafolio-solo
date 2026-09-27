@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edgar Marcel Quispe Taype | Portafolio Web</title>
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #120c0a;
+        color: #f2e9e4;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .contenedor {
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ENCABEZADO */
+      header {
+        background: linear-gradient(135deg, #180e0a 0%, #2b1710 50%, #441f17 100%);
+        padding: 50px 0 40px 0;
+        text-align: center;
+        border-bottom: 3px solid #ff5588;
+        box-shadow: 0 4px 20px rgba(255, 85, 136, 0.25);
+        position: relative;
+      }
+
+      .cj-header-logo {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        opacity: 0.9;
+        filter: drop-shadow(0 0 6px rgba(255, 85, 136, 0.6));
+      }
+
+      .perfil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contenedorFoto {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid #ff5588;
+        margin-bottom: 18px;
+        box-shadow: 0 0 20px rgba(255, 85, 136, 0.35);
+        animation: floatImage 4s ease-in-out infinite;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .contenedorFoto:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 28px rgba(255, 85, 136, 0.6);
+      }
+
+      .foto {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .infor h1 {
+        font-size: 2.3rem;
+        color: #ffffff;
+        margin-bottom: 6px;
+        letter-spacing: 1px;
+      }
+
+      .infor p {
+        font-size: 1.15rem;
+        color: #ff88aa;
+        font-weight: 600;
+      }
+
+      @keyframes floatImage {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+
+      /* SECCIONES Y TÍTULOS */
+      section {
+        padding: 55px 0;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 35px;
+        color: #ff5588;
+        font-size: 2rem;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      h2 i {
+        margin-right: 8px;
+        font-size: 1.7rem;
+      }
+
+      h2::after {
+        content: '';
+        display: block;
+        width: 90px;
+        height: 3px;
+        background: #ff5588;
+        margin: 12px auto 0 auto;
+        border-radius: 2px;
+        box-shadow: 0 0 8px rgba(255, 85, 136, 0.5);
+      }
+
+      /* SOBRE MÍ */
+      #sobre-mi {
+        background-color: #18110d;
+        border-bottom: 1px solid #2d1c16;
+      }
+
+      #sobre-mi p {
+        font-size: 1.05rem;
+        color: #e3d7d1;
+        margin-bottom: 16px;
+        text-align: justify;
+        line-height: 1.75;
+      }
+
+      /* PROYECTOS */
+      .proyectos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 22px;
+      }
+
+      .proyecto {
+        background: #241712;
+        padding: 24px;
+        border-radius: 10px;
+        border: 1px solid #3c281f;
+        border-top: 4px solid #ff5588;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .proyecto:hover {
+        transform: translateY(-6px);
+        border-color: #ff5588;
+        box-shadow: 0 10px 24px rgba(255, 85, 136, 0.25);
+      }
+
+      .proyecto h3 {
+        color: #ff88aa;
+        margin-bottom: 12px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .proyecto p {
+        color: #d1c3bd;
+        font-size: 0.96rem;
+      }
+
+      /* HABILIDADES */
+      #habilidades {
+        background-color: #120c0a;
+      }
+
+      .habilidades-lista {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin-bottom: 30px;
+      }
+
+      .habilidad {
+        background: #241712;
+        color: #ff88aa;
+        border: 1px solid #ff5588;
+        padding: 10px 22px;
+        border-radius: 25px;
+        font-size: 0.98rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .habilidad:hover {
+        transform: scale(1.06) translateY(-2px);
+        background: #ff5588;
+        color: #120c0a;
+        box-shadow: 0 0 18px rgba(255, 85, 136, 0.45);
+      }
+
+      /* CRUZ CACTUS JACK */
+      .cactus-cross-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        opacity: 0.85;
+      }
+
+      .cactus-cross-svg {
+        width: 80px;
+        height: 110px;
+        filter: drop-shadow(0 0 8px rgba(255, 85, 136, 0.4));
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      .cactus-cross-container:hover .cactus-cross-svg {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 14px rgba(255, 85, 136, 0.8));
+      }
+
+      /* FOOTER */
+      footer {
+        background: #0c0806;
+        color: white;
+        text-align: center;
+        padding: 40px 0 30px 0;
+        border-top: 2px solid #281913;
+      }
+
+      .enlaces {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        margin: 20px 0;
+      }
+
+      .enlaces a {
+        color: #f2e9e4;
+        font-size: 2rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+      }
+
+      .enlaces a.facebook:hover { color: #1877f2; transform: translateY(-5px) scale(1.15); }
+      .enlaces a.whatsapp:hover { color: #25d366; transform: translateY(-5px) scale(1.15); }
+      .enlaces a.instagram:hover { color: #e1306c; transform: translateY(-5px) scale(1.15); }
+      .enlaces a.gmail:hover { color: #ea4335; transform: translateY(-5px) scale(1.15); }
+
+      footer p {
+        color: #8a7870;
+        font-size: 0.88rem;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .infor h1 { font-size: 1.8rem; }
+        .contenedorFoto { width: 140px; height: 140px; }
+        section { padding: 40px 0; }
+        .enlaces { gap: 20px; font-size: 1.8rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ENCABEZADO -->
+    <header>
+      <div class="cj-header-logo" title="Cactus Jack">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#ff5588" stroke-width="4" stroke-linecap="round">
+          <circle cx="50" cy="55" r="38" />
+          <path d="M 20 28 L 22 10 L 29 20 L 35 8 L 41 18 L 50 5 L 58 18 L 65 8 L 71 20 L 78 10 L 80 28" />
+          <line x1="33" y1="43" x2="43" y2="49" />
+          <line x1="67" y1="43" x2="57" y2="49" />
+          <path d="M 30 75 Q 50 63 70 75" />
+          <line x1="38" y1="65" x2="38" y2="76" />
+          <line x1="46" y1="63" x2="46" y2="74" />
+          <line x1="54" y1="63" x2="54" y2="74" />
+          <line x1="62" y1="65" x2="62" y2="76" />
+        </svg>
+      </div>
+
+      <div class="contenedor">
+        <div class="perfil">
+          <div class="contenedorFoto">
+            <img src="./imagen edgar/portada.jpeg" alt="Edgar Marcel Quispe Taype" class="foto" />
+          </div>
+          <div class="infor">
+            <h1>Edgar Marcel Quispe Taype</h1>
+            <p><i class="fas fa-bolt"></i> Desarrollador Web</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+      <div class="contenedor">
+        <h2><i class="fas fa-user"></i> Sobre Mí</h2>
+        <p>
+          Soy estudiante de Ingeniería de Sistemas y me gusta aprender cosas nuevas, sobre todo cuando tienen que ver con números y tecnología. Una de mis principales pasiones es la música, me gusta mucho escuchar diferentes géneros y también tocar guitarra cuando tengo tiempo. Me considero melómano porque la música está muy presente en mi día a día y es algo que realmente disfruto. Quiero seguir aprendiendo, mejorar mis habilidades y poco a poco prepararme para ser un buen profesional.
+        </p>
+        <p>
+          Cuando no estoy estudiando, me gusta tocar guitarra, escuchar música y descubrir nuevos artistas y géneros. Me considero un melómano y disfruto mucho de la música en mi día a día. También me gustan los números y los retos relacionados con la tecnología. Mi objetivo es seguir desarrollándome como estudiante de Ingeniería de Sistemas y crear soluciones que puedan ser útiles para las personas.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <div class="contenedor">
+        <h2><i class="fas fa-code"></i> Mis Proyectos</h2>
+        <div class="proyectos-container">
+          <div class="proyecto">
+            <div>
+              <h3><i class="fas fa-cloud-sun"></i> Clima Cactus Jack ⚡</h3>
+              <p>
+                Aplicación meteorológica interactiva. Incluye selección jerárquica de Perú (departamentos, provincias y distritos) y ciudades internacionales con reloj digital en tiempo real.
+              </p>
+            </div>
+          </div>
+
+          <div class="proyecto">
+            <div>
+              <h3><i class="fas fa-wallet"></i> Control de gastos</h3>
+              <p>Esta app sirve para organizar nuestros gastos día a día y tener una mejor organización.</p>
+            </div>
+          </div>
+
+          <div class="proyecto">
+            <div>
+              <h3><i class="fas fa-language"></i> Vocalingo</h3>
+              <p>
+                Es una app que permite traducir diferentes idiomas mediante la voz de forma rápida y sencilla. El usuario puede hablar, seleccionar el idioma y obtener la traducción al instante.
+              </p>
+            </div>
+          </div>
+
+          <div class="proyecto">
+            <div>
+              <h3><i class="fas fa-quote-right"></i> Fraseo</h3>
+              <p>
+                Es una aplicación que muestra mensajes aleatorios para inspirar, entretener y compartir diferentes frases de manera rápida y sencilla.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades">
+      <div class="contenedor">
+        <h2><i class="fas fa-layer-group"></i> Habilidades</h2>
+        <div class="habilidades-lista">
+          <div class="habilidad"><i class="fas fa-cubes"></i> MIT App Inventor</div>
+          <div class="habilidad"><i class="fab fa-python"></i> Python</div>
+          <div class="habilidad"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="habilidad"><i class="fab fa-github"></i> GitHub</div>
+        </div>
+
+        <div class="cactus-cross-container" title="Cactus Jack Logo">
+          <svg class="cactus-cross-svg" viewBox="0 0 100 140" fill="#ff5588">
+            <line x1="30" y1="12" x2="18" y2="2" stroke="#ff5588" stroke-width="3" stroke-linecap="round" />
+            <line x1="50" y1="10" x2="50" y2="0" stroke="#ff5588" stroke-width="3" stroke-linecap="round" />
+            <line x1="70" y1="12" x2="82" y2="2" stroke="#ff5588" stroke-width="3" stroke-linecap="round" />
+            <path d="M 43 20 C 38 20 38 28 43 28 C 47 28 48 26 48 26" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <path d="M 41 42 L 45 33 L 49 42 M 42 38 L 48 38" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <path d="M 22 55 L 26 55 M 24 55 L 24 64 C 24 67 21 67 19 66" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <path d="M 33 67 L 36 55 L 40 67 M 34 63 L 39 63" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <path d="M 48 67 C 44 67 44 55 48 55 C 51 55 52 57 52 57" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <path d="M 60 55 L 60 67 M 60 61 L 68 55 M 60 61 L 68 67" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <path d="M 40 76 L 56 76 M 48 76 L 48 88" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <path d="M 42 96 L 42 105 C 42 110 52 110 52 105 L 52 96" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <path d="M 52 118 C 42 116 42 122 52 124 C 58 126 54 133 42 131" stroke="#ff5588" stroke-width="3.5" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <div class="contenedor">
+        <h2>Contacto / Mis Redes</h2>
+        <div class="enlaces">
+          <a href="https://www.facebook.com/marcelo.taype.2025" target="_blank" class="facebook" title="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://wa.me/51954992287?text=Hola%20Edgar,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" class="whatsapp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.instagram.com/mar_qt9?stkn=MWRzanV5dXY1N2R6aA==" target="_blank" class="instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=61635963@continental.edu.pe" target="_blank" class="gmail" title="Redactar correo por Gmail">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p>
+          &copy; 2026 Desarrollado por Edgar Marcel Quispe Taype - Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
